@@ -4,9 +4,10 @@ points = [
 [2, 6, 7]     #  CX CY CZ
 ]
 
-calories = 0
+#calories = 0
 with open("input.txt") as f:
-    for line in f.readlines():
-        calories += points[ord(line[0])-ord('A')][ord(line[2])-ord('X')]
+    #for line in f.readlines():
+    #    calories += points[ord(line[0])-ord('A')][ord(line[2])-ord('X')]
+    calories = sum(points[ord(line[0])-ord('A')][ord(line[2])-ord('X')] for line in f.readlines())
     
 print(calories)
