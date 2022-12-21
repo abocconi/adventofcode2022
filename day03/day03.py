@@ -4,7 +4,6 @@ def item_priority_get(item : str):
     else:
         return ord(item) + 27 - ord('A')
    
-
 def rucksack_priority_get(rucksack : str):
     rucksack  = rucksack.rstrip()
     s1 = set(rucksack[0:int(len(rucksack)/2)])
@@ -12,9 +11,11 @@ def rucksack_priority_get(rucksack : str):
     return sum(item_priority_get(item) for item in s1.intersection(s2))
 
 def group_priority_get(rucksacks : list[str]):
-    s1 = set(rucksacks[0].rstrip()).intersection(set(rucksacks[1].rstrip()))
-    s2 = set(rucksacks[2].rstrip())
-    return sum(item_priority_get(item) for item in s1.intersection(s2))
+    s1 = set(rucksacks[0].rstrip())
+    s2 = set(rucksacks[1].rstrip())
+    s3 = set(rucksacks[2].rstrip())    
+    return sum(item_priority_get(item) for item in s1.intersection(s2, s3))
+
 
 with open("input.txt") as f:
     rucksacks = f.readlines()
