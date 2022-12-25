@@ -1,12 +1,12 @@
 
 def cratemover9000_move(n : int, queue_from : list, queue_to : list):
-    for x in range(0, n):
+    for x in range(n):
         queue_to.append(queue_from.pop())
 
 
 def cratemover9001_move(n : int, queue_from : list, queue_to : list):
     l = len(queue_from)
-    for x in range(0, n):        
+    for x in range(n):        
         queue_to.append(queue_from.pop(l-n))
 
 
