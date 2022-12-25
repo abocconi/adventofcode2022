@@ -34,8 +34,10 @@ with open("input.txt") as f:
             cratemover9001_move(int(moves[1]), crates2[int(moves[3])-1], crates2[int(moves[5])-1])
 
 # part 1
-print (crates1)
+[print(i[-1], end='') for i in crates1]
+print()
 # part 2
-print (crates2)
+[print(i[-1], end='') for i in crates2]
+print()
 
 
