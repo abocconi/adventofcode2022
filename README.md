@@ -1,4 +1,11 @@
-# MY ADVENT OF CODE 2022
-## (to learn python)
+# My [ADVENT OF CODE 2022](https://adventofcode.com/2022) coding challenge in python
+## (as python novice)
 
+- [day01](day01/)  
+- [day02](day02/)
+- [day03](day03/)
+- [day04](day04/)
+- [day05](day05/)
+
+(work in progress...)
 
