@@ -5,37 +5,3 @@ with open('input.txt') as f:
         calories.append(sum(int(x) for x in line.rstrip('\n').split('\n')))    
 print(max(calories))
 
-
-        
-
-
-
-
-
-        
-
-
-
-
-        
-
-        
-
-
-
-        
-
-
-                    
-        
-        
-    
-
-
-                                   
-       
-
-        
-
-
-
