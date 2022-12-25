@@ -1,4 +1,4 @@
-# My [ADVENT OF CODE 2022](https://adventofcode.com/2022) coding challenge in python
+# My [ADVENT OF CODE 2022](https://adventofcode.com/2022) coding challenge
 ## (as python novice)
 
 - [day01](day01/)  
