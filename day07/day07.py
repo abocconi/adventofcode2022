@@ -45,7 +45,7 @@ class CLParser:
         #print(self.currentDir.data)        
         return
 
-    def __gettotalBelow100000(self, root : TreeNode, totals):        
+    def __getTotals(self, root : TreeNode, totals):        
 
         if root is None:
             return
@@ -53,15 +53,24 @@ class CLParser:
         totalSize = root.localsize
         
         for child in root.children:            
-            totalSize += self.__gettotalBelow100000(child, totals)            
+            totalSize += self.__getTotals(child, totals)            
 
         totals.append(totalSize)
         return totalSize
 
-    def totalBelow100000(self):                
+    def totals(self):
         totals = []
-        self.__gettotalBelow100000(self.root, totals)
-        return sum(size for size in totals if size < 100000)
+        self.__getTotals(self.root, totals)
+        return totals
+    
+    def totalBelow100000(self):                
+        return sum(size for size in self.totals() if size < 100000)
+
+    def totalSize(self):                
+        return max(self.totals())
+    
+    def smallestDirectoryAbove(self, minsize):
+        return min(list(filter(lambda size: size >= minsize, self.totals())))
 
     def parse(self, line):
         
@@ -80,4 +89,9 @@ with open("input.txt") as f:
     for line in f.readlines():
         parser.parse(line.split())
  
+# part 1
 print(parser.totalBelow100000())       
+
+# part 2
+print(parser.smallestDirectoryAbove(30000000-(70000000-parser.totalSize())))
+
